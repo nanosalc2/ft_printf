@@ -2,6 +2,25 @@
 #include <unistd.h>
 #include <stdarg.h>
 
+int print_char(int c)
+{
+    return write(1, &c, 1);
+}
+
+int print_str(char *str)
+{
+    int i;
+
+    i = 0;
+    while (*str)
+    {
+        print_char((int)*str);
+        i++;
+        str++;
+    }
+    return i;
+}
+
 int ft_print_format(char specifier, va_list ap)
 {
     int count;
@@ -33,7 +52,7 @@ int ft_printf(const char *format, ...)
             count += ft_print_format(*(++format), ap);
         else
             count += write(1, format, 1);
-        ++format;
+        format++;
     }
     va_end(ap);
     return count;
