@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: carlsalc <carlsalc@student.42madrid.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/06/11 18:39:39 by carlsalc          #+#    #+#             */
+/*   Updated: 2025/06/11 18:39:39 by carlsalc         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef FT_PRINTF_H
 #   define FT_PRINTF_H
 
-#include <stdarg.h>
-#include <unistd.h>
-#include <stdlib.h>
+#   include <stdarg.h>
+#   include <unistd.h>
+#   include <stdlib.h>
 
 int     ft_printf(const char *format, ...);
 int     ft_putchar(char c);

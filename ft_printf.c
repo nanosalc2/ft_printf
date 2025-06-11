@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-static int  handle_format(char spec, va_list args)
+static int  ft_format(char spec, va_list args)
 {
     if (spec == 'c')
         return ft_putchar(va_arg(args, int));
@@ -42,7 +42,7 @@ int ft_printf(const char *format, ...)
     {
         if (*format == '%' && *(format + 1))
         {
-            count += handle_format(*(++format), args);
+            count += ft_format(*(++format), args);
         }
         else
         {
