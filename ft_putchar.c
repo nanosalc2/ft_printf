@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   handle_char.c                                      :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: carlsalc <carlsalc@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/11 17:05:17 by carlsalc          #+#    #+#             */
-/*   Updated: 2025/06/11 17:05:17 by carlsalc         ###   ########.fr       */
+/*   Updated: 2025/06/12 20:28:51 by carlsalc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int ft_putchar(char c)
+int	ft_putchar(char c)
 {
-    return write(1, &c, 1);
+	return (write(1, &c, 1));
 }
