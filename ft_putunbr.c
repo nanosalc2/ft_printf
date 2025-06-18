@@ -17,8 +17,11 @@ static int	ft_unumlen(unsigned int n)
 	int	len;
 
 	len = 1;
-	while (n /= 10)
+	while (n)
+	{
 		len++;
+		n /= 10;
+	}
 	return (len);
 }
 

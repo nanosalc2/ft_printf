@@ -30,11 +30,14 @@ int	ft_putnbr(int n)
 	char			buffer[12];
 	int				len;
 	int				neg;
-	int    nb;
+	int				nb;
 
 	neg = (n < 0);
 	len = ft_numlen(n);
-	nb = neg ? -(n) : n;
+	if (neg)
+		nb = -(n);
+	else
+		nb = n;
 	buffer[len] = '\0';
 	while (len-- > neg)
 	{
