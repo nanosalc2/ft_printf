@@ -22,12 +22,12 @@ int	ft_putptr(unsigned long ptr)
 	base = "0123456789abcdef";
 	buffer[i] = '\0';
 	if (ptr == 0)
-		return (write(1, "(nil)", 5));
+		return (write(1, "(null)", 6));
 	while (ptr && i--)
 	{
 		buffer[i] = base[ptr % 16];
 		ptr /= 16;
 	}
 	write(1, "0x", 2);
-	return (2 + ft_putstr(&buffer[i + 1]));
+	return (2 + ft_putstr(&buffer[i]));
 }

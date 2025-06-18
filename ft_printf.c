@@ -19,7 +19,7 @@ static	int	ft_format(char spec, va_list args)
 	if (spec == 's')
 		return (ft_putstr(va_arg(args, char *)));
 	if (spec == 'p')
-		return (ft_putptr((unsigned long)va_arg(args, void *)));
+		return (ft_putptr(va_arg(args, unsigned long)));
 	if (spec == 'd' || spec == 'i')
 		return (ft_putnbr(va_arg(args, int)));
 	if (spec == 'u')
@@ -42,14 +42,10 @@ int	ft_printf(const char *format, ...)
 	va_start(args, format);
 	while (*format)
 	{
-		if (*format == '%' && *(format + 1))
-		{
-			count += ft_format(*(++format), args);
-		}
+		if (*format == '%')
+				count += ft_format(*(++format), args);
 		else
-		{
 			count += ft_putchar(*format);
-		}
 		format++;
 	}
 	va_end(args);

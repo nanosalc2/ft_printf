@@ -30,11 +30,11 @@ int	ft_putnbr(int n)
 	char			buffer[12];
 	int				len;
 	int				neg;
-	unsigned int	nb;
+	int    nb;
 
 	neg = (n < 0);
 	len = ft_numlen(n);
-	nb = neg ? -n : n;
+	nb = neg ? -(n) : n;
 	buffer[len] = '\0';
 	while (len-- > neg)
 	{
@@ -45,3 +45,28 @@ int	ft_putnbr(int n)
 		buffer[0] = '-';
 	return (ft_putstr(buffer));
 }
+
+// int	ft_putnbr(int n)
+// {
+// 	int	sign;
+// 	int	result;
+// 	char *str;
+
+// 	str = "0123456789";
+// 	sign = 1;
+// 	result = 0;
+// 	while (str[n] >= 9 && str[n] <= 13)
+// 		n++;
+// 	if (str[n] == '-')
+// 	{
+// 		if (str[n] == '-')
+// 			sign = -1;
+// 		n++;
+// 	}
+// 	while (str[n] >= '0' && str[n] <= '9')
+// 	{
+// 		result = result * 10 + (str[n] - '0');
+// 		n++;
+// 	}
+// 	return (result * sign);
+// }

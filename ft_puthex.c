@@ -14,19 +14,25 @@
 
 int	ft_puthex(unsigned int n, int uppercase)
 {
-	char	buffer[9];
+	int		count;
 	char	*base;
-	int		i;
 
-	base = uppercase ? "0123456789ABCDEF" : "0123456789abcdef";
-	i = 8;
-	buffer[i] = '\0';
-	if (n == 0)
-		return (write(1, "0", 1));
-	while (n && i--)
+	if (n < 16)
 	{
-		buffer[i] = base[n % 16];
-		n /= 16;
+		if (uppercase == 0)
+		{
+			base = "0123456789abcdef";
+			return (ft_putchar(base[n]));
+		}
+		else
+		{
+			base = "0123456789ABCDEF";
+			return (ft_putchar(base[n]));
+		}
 	}
-	return (ft_putstr(&buffer[i + 1]));
+	else
+	{
+		count = ft_puthex(n / 16, uppercase);
+		return (count + ft_puthex(n % 16, uppercase));
+	}
 }
