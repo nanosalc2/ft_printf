@@ -31,3 +31,4 @@ int	ft_putptr(unsigned long ptr)
 	write(1, "0x", 2);
 	return (2 + ft_putstr(&buffer[i]));
 }
+

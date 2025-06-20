@@ -35,9 +35,9 @@ int	ft_putnbr(int n)
 	neg = (n < 0);
 	len = ft_numlen(n);
 	if (neg)
-		nb = -(n);
+		nb = -((unsigned int)n);
 	else
-		nb = n;
+		nb = (unsigned int)n;
 	buffer[len] = '\0';
 	while (len-- > neg)
 	{
